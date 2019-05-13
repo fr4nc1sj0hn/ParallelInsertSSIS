@@ -1,0 +1,729 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/13/2019 8:24:03 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PCM-HD8V5S2"
+  DTS:CreatorName="INTERNAL\FRANC583"
+  DTS:DTSID="{354B1D49-70C0-453A-B498-E4C50A2191C0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1300.375"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{D2BB2147-296D-4E51-8039-682851BFEE84}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Single Insert"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F6C70900-8621-49EE-8036-69A634025DC6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Single Insert"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Single Insert\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[BigDataTableTarget]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">150000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Single Insert\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{7AD77375-6DAB-40DD-BBBE-5A6264DC690B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.MyPlayGround]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Col1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Col1"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col1]"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col1]" />
+                    <inputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Col2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Col2"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col2]"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col2]" />
+                    <inputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Col3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Col3"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col3]"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col3]" />
+                    <inputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Col4]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Col4"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col4]"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col4]" />
+                    <inputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Col5]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Col5"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col5]"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col5]" />
+                    <inputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Col6]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Col6"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col6]"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col6]" />
+                    <inputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Col7]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Col7"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col7]"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col7]" />
+                    <inputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Col8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Col8"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col8]"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col8]" />
+                    <inputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Col9]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Col9"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col9]"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col9]" />
+                    <inputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Col10]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="Col10"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col10]"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col10]" />
+                    <inputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID]"
+                      cachedDataType="i8"
+                      cachedName="ID"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col1" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col2" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col3" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col4" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col5" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col6" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col7" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col8" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col9]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col9" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col10]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="Col10" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i8"
+                      name="ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Single Insert\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Single Insert\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Single Insert\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Single Insert\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[BigDataTable]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Single Insert\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{7AD77375-6DAB-40DD-BBBE-5A6264DC690B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.MyPlayGround]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col1]"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col1]"
+                      name="Col1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col2]"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col2]"
+                      name="Col2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col3]"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col3]"
+                      name="Col3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col4]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col4]"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col4]"
+                      name="Col4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col5]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col5]"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col5]"
+                      name="Col5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col6]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col6]"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col6]"
+                      name="Col6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col7]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col7]"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col7]"
+                      name="Col7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col8]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col8]"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col8]"
+                      name="Col8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col9]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col9]"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col9]"
+                      name="Col9"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col10]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col10]"
+                      length="9"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[Col10]"
+                      name="Col10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col1" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col2" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col3" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col4" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col5" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col6" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col7" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col8" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col9]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Col9" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Col10]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="Col10" />
+                    <externalMetadataColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      dataType="i8"
+                      name="ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col1]"
+                      name="Col1" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col2]"
+                      name="Col2" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col3]"
+                      name="Col3" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col4]"
+                      name="Col4" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col5]"
+                      name="Col5" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col6]"
+                      name="Col6" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col7]"
+                      name="Col7" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col8]"
+                      name="Col8" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col9]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col9]"
+                      name="Col9" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col10]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Col10]"
+                      name="Col10" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="i8"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Single Insert.Paths[OLE DB Source Output]"
+              endId="Package\Single Insert\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Single Insert\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Single Insert"
+          TopLeft="172.571431510303,58.7294125883637" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Single Insert">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Single Insert\OLE DB Source"
+          TopLeft="37.1428577753963,81.9764717379243" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Single Insert\OLE DB Destination"
+          TopLeft="317.714291124928,80.7529423090001" />
+        <EdgeLayout
+          Id="Package\Single Insert.Paths[OLE DB Source Output]"
+          TopLeft="186.742857775396,102.164707023462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="130.971433349532,0"
+              Start="0,0"
+              End="123.471433349532,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="123.471433349532,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Single Insert\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Single Insert\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
